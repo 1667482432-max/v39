@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.pytest_cache/
+
+# Official inputs are supplied by the organizer and are not redistributed.
+Round1_Train_Channel.npy
+Round1_Train_Pos.npy
+Round1_Test_Pos.npy
+Round1_Map.ply
+Round1_Setup.json
+
+# Local archives and obsolete generated variants.
+Round1_Test_Channel_v*.npy
+Round1_Test_Channel_v*.json
+project_round1_*.zip
+submission_round1*.zip

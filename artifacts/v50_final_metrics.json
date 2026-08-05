@@ -1,0 +1,45 @@
+{
+  "version": "v50-geometry-ensemble-four-action-sample-gating",
+  "validation": "strict five-fold leave-one-fold-out",
+  "folds": 5,
+  "samples_per_fold": 200,
+  "excluded_zero_channel_indices": [
+    22,
+    205,
+    221,
+    466,
+    695,
+    976,
+    1071,
+    1113,
+    1369,
+    1390,
+    1414,
+    1501,
+    1728,
+    1815,
+    1872,
+    1889
+  ],
+  "metrics": {
+    "pas": 0.7648172497749328,
+    "pdp": 0.8519760847091675,
+    "nmse": 0.614336041706267,
+    "score": 0.7706072766760469
+  },
+  "previous_formal_v40": {
+    "pas": 0.7643499851226807,
+    "pdp": 0.8517864108085632,
+    "nmse": 0.6146168170134494,
+    "score": 0.7703229572969801
+  },
+  "score_improvement_vs_v40": 0.0002843193790668,
+  "output": {
+    "file": "Round1_Test_Channel.npy",
+    "shape": [500, 256, 4, 192],
+    "dtype": "complex64",
+    "size_bytes": 786432128,
+    "sha256": "648ED578F70AD026C0B72DFD01C798DC2C0E0E13E9793CCDEFC80A47994874C8"
+  },
+  "runtime_gate_verification": "artifacts/v50_runtime_gate_verification.json"
+}

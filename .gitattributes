@@ -1,0 +1,4 @@
+Round1_Test_Channel.npy filter=lfs diff=lfs merge=lfs -text
+artifacts/*.npy filter=lfs diff=lfs merge=lfs -text
+artifacts/*.npz filter=lfs diff=lfs merge=lfs -text
+artifacts/*.pt filter=lfs diff=lfs merge=lfs -text

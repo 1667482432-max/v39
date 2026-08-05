@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "folds": [
+    {
+      "fold": "101",
+      "samples": 200,
+      "action_match": true,
+      "maximum_compact_error": 4.172325134277344e-07
+    },
+    {
+      "fold": "202",
+      "samples": 200,
+      "action_match": true,
+      "maximum_compact_error": 4.76837158203125e-07
+    },
+    {
+      "fold": "20260804",
+      "samples": 200,
+      "action_match": true,
+      "maximum_compact_error": 3.5762786865234375e-07
+    },
+    {
+      "fold": "303",
+      "samples": 200,
+      "action_match": true,
+      "maximum_compact_error": 2.980232238769531e-07
+    },
+    {
+      "fold": "404",
+      "samples": 200,
+      "action_match": true,
+      "maximum_compact_error": 3.5762786865234375e-07
+    }
+  ]
+}

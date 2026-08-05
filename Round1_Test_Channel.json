@@ -1,0 +1,172 @@
+{
+  "version": "v50-geometry-ensemble-four-action-sample-gating",
+  "output": "Round1_Test_Channel.npy",
+  "shape": [
+    500,
+    256,
+    4,
+    192
+  ],
+  "dtype": "complex64",
+  "device": "cuda",
+  "valid_training_samples": 1984,
+  "excluded_zero_channel_indices": [
+    22,
+    205,
+    221,
+    466,
+    695,
+    976,
+    1071,
+    1113,
+    1369,
+    1390,
+    1414,
+    1501,
+    1728,
+    1815,
+    1872,
+    1889
+  ],
+  "neural_models": [
+    "artifacts\\final_model_seed7.pt",
+    "artifacts\\final_model_seed19.pt",
+    "artifacts\\final_model_seed43.pt",
+    "artifacts\\final_model_seed101.pt",
+    "artifacts\\final_model_seed20260804.pt"
+  ],
+  "neural_blend": 0.0001,
+  "conditional_groupwise": "artifacts\\conditional_groupwise_lowreg.json",
+  "context": "artifacts\\map_context_advanced.npz",
+  "advanced_map_expert": false,
+  "expert_metrics": [
+    "xy_ctx-patch_s4",
+    "xy_ctx-patch_s4",
+    "xy_ctx-patch_s4",
+    "xy_ctx-patch_s4",
+    "xy_ctx-patch_s4",
+    "xy_ctx-patch_s4",
+    "xy_ctx-patch_s4",
+    "xy_ctx-patch_s4",
+    "xy_ctx-patch_s4",
+    "xy_ctx-patch_s4",
+    "xy_ctx-patch_s4",
+    "xy_ctx-patch_s4",
+    "xy_ctx-all_s4",
+    "xy_ctx-all_s4",
+    "xy_ctx-summary_s4"
+  ],
+  "disagreement_pas_model": "artifacts\\disagreement_gating_cv_pas_advanced_s075_e3.pt",
+  "disagreement_pdp_model": "artifacts\\disagreement_gating_cv_pdp_advanced_s06_e2.pt",
+  "phase_neighbors": 16,
+  "phase_weighting": "groupwise ordinary kriging with local phase synchronization",
+  "phase_kriging_scale": 0.75,
+  "phase_kriging_nugget": 0.1,
+  "phase_groupwise_kernels": {
+    "weak": {
+      "neighbors": 16,
+      "scale": 2.0,
+      "nugget": 0.001
+    },
+    "strong": {
+      "neighbors": 16,
+      "scale": 2.0,
+      "nugget": 0.1
+    }
+  },
+  "phase_sync_strength": 0.2,
+  "wavenumber": 140.25,
+  "phase_slope": 0.0006,
+  "bs_array_steering": [
+    -1.75,
+    -2.5,
+    26.0
+  ],
+  "direct_blend": 0.12,
+  "energy_neighbors": 4,
+  "energy_gamma": 0.2,
+  "group_energy": "artifacts\\channel_group_energy.npy",
+  "group_energy_neighbors": 64,
+  "group_energy_power": 4.0,
+  "group_energy_metric": "xy_ctx-patch_s4",
+  "group_energy_advanced_metric": "xy_ctx-material-center-multiscale_s3",
+  "group_energy_advanced_distance": [
+    1.2,
+    4.3
+  ],
+  "group_energy_strength": 0.3,
+  "group_energy_mid_strength": 0.5,
+  "group_energy_mid_distance": [
+    1.6,
+    3.5
+  ],
+  "complex_scale": [
+    0.7945592076014178,
+    -0.004367502672896887
+  ],
+  "scalar_calibration": "artifacts\\v50_scalar_calibration.npz",
+  "scalar_calibration_mode": "advanced_rbf",
+  "scalar_calibration_strength": 1.0,
+  "local_scalar_ensemble": "artifacts\\v50_local_scalar_ensemble.npz",
+  "local_scalar_metrics": [
+    "xy_ctx-endpoint-far_s4",
+    "xy_ctx-material-center-multiscale_s3",
+    "xy_ctx-patch_s4"
+  ],
+  "local_scalar_blend_weight": [
+    0.1,
+    0.7,
+    0.2
+  ],
+  "local_scalar_clip": 0.1,
+  "local_spectral_correction": "artifacts\\v50_geometry_ensemble_gate.npz",
+  "local_spectral_pas": {
+    "metric": "xy_ctx-material-center-multiscale_s3",
+    "neighbors": 4,
+    "method": "target",
+    "strength": 0.1,
+    "gate": "consensus",
+    "gate_direction": "high",
+    "gate_threshold": 0.7332865465423208
+  },
+  "local_spectral_pdp": {
+    "metric": "xy_ctx-endpoint-far_s4",
+    "neighbors": 24,
+    "method": "target",
+    "strength": 0.1,
+    "gate": "agreement",
+    "gate_direction": "low",
+    "gate_threshold": 0.8193696419417309
+  },
+  "joint_sample_spectral_gate": null,
+  "four_action_sample_spectral_gate": {
+    "objective": "joint PAS/PDP/optimal-NMSE gain",
+    "actions": [
+      "none",
+      "PAS",
+      "PDP",
+      "PAS+PDP"
+    ],
+    "selection_fraction": 0.93,
+    "primary_metric": "xy_matrix",
+    "primary_neighbors": 7,
+    "secondary_metric": "xy_y0.5",
+    "secondary_neighbors": 8,
+    "primary_ensemble_weight": 0.37,
+    "action_bias": [
+      0.0,
+      0.00012,
+      4.5e-05
+    ]
+  },
+  "ue_calibration_residual": "artifacts\\v50_ue_residual_calibration.npz",
+  "ue_calibration_residual_strength": 0.1,
+  "iterations": 10,
+  "relaxation": 0.75,
+  "cross_validated_metrics": {
+    "pas": 0.7648172497749328,
+    "pdp": 0.8519760847091675,
+    "nmse": 0.614336041706267,
+    "score": 0.7706072766760469
+  }
+}
